@@ -1,7 +1,7 @@
 <?php
 
 function plant_theme_support() {
-   // Adds dynamic title tag support, WP manages title tags itself. it works
+   // Adds dynamic title tag support, WP manages title tags itself.
    add_theme_support('title-tag');
 }
 add_action('after_setup_theme','plant_theme_support');
