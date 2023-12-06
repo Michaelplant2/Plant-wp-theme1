@@ -6,6 +6,10 @@ function plant_theme_support() {
 }
 add_action('after_setup_theme','plant_theme_support');
 
+function plant_theme_menus() {
+   
+}
+
 function plant_theme_register_styles() {
    $version = wp_get_theme()->get('Version');
    wp_enqueue_style('planttheme-style', get_template_directory_uri() . "/style.css", array('planttheme-bootstrap'), $version, 'all');
