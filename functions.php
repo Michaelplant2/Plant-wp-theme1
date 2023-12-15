@@ -7,8 +7,14 @@ function plant_theme_support() {
 add_action('after_setup_theme','plant_theme_support');
 
 function plant_theme_menus() {
-   
+   // Adds Menu option in WordPress to add new pages.
+   $locations = array(
+      'primary' => "Desktop Primary Left Sidebar",
+      'footer' => "Footer Menu Items"
+   );
+   register_nav_menus($locations);
 }
+add_action('init','plant_theme_menus');
 
 function plant_theme_register_styles() {
    $version = wp_get_theme()->get('Version');
