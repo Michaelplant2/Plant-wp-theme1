@@ -12,18 +12,28 @@
 <?php
    wp_head();
 ?>
+
 </head> 
 
 <body>
     
    <header class="header text-center">	    
-	   <a class="site-title pt-lg-4 mb-0" href="index.html">MPlantamura</a>
+	   <a class="site-title pt-lg-4 mb-0" href="index.html">
+			<?php echo get_bloginfo('name'); ?>
+		</a>
 	   <nav class="navbar navbar-expand-lg navbar-dark" >  
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div id="navigation" class="collapse navbar-collapse flex-column" >
-				<img class="mb-3 mx-auto logo" src="images/logo.png" alt="logo" >			
+				<?php
+				if(function_exists('the_custom_logo')){
+					$custom_logo_id = get_theme_mod('custom_logo');
+					$logo = wp_get_attachment_image_src($custom_logo_id);
+
+				}	
+				?>
+				<img class="mb-3 mx-auto logo" src="<?= $logo[0] ?>" alt="logo" >			
 				
 				<?php
 					wp_nav_menu(
