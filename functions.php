@@ -3,7 +3,10 @@
 function plant_theme_support() {
    // Adds dynamic title tag support, WP manages title tags itself.
    add_theme_support('title-tag');
+   // Adds dynamic logo support.
    add_theme_support('custom-logo');
+   // Adds featured image support in blog posts.
+   add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme','plant_theme_support');
 
